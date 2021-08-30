@@ -1,0 +1,1 @@
+# yealink-url-scheme-handler
