@@ -1,0 +1,16 @@
+# .goreleaser.yml
+builds:
+  # You can have multiple builds defined as a yaml list
+  -
+    binary: yealink-click2dial
+    goos:
+      - linux
+      - windows
+      - darwin
+    goarch:
+      - amd64
+      - arm
+      - arm64
+    goarm:
+      - 6
+      - 7
