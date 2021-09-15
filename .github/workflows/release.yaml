@@ -10,7 +10,6 @@ jobs:
       uses: ngs/go-release.action@v1.0.1
       env:
         CMD_PATH: -o yealink-click2dial
-        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         GOARCH: "386"
         GOOS: linux
         EXTRA_FILES: "LICENSE"
