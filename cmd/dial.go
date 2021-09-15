@@ -1,8 +1,8 @@
 package cmd
 
 import (
-	"github.com/adrianrudnik/yealink-url-scheme-handler/service/internal"
-	"github.com/adrianrudnik/yealink-url-scheme-handler/service/pkg/yealink"
+	"github.com/adrianrudnik/yealink-click2dial-handler/internal"
+	"github.com/adrianrudnik/yealink-click2dial-handler/pkg/yealink"
 	"github.com/rs/zerolog/log"
 	"github.com/spf13/cobra"
 )

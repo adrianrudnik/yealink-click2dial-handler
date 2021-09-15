@@ -2,7 +2,7 @@ package internal
 
 import (
 	"encoding/json"
-	"github.com/adrianrudnik/yealink-url-scheme-handler/service/pkg/yealink"
+	"github.com/adrianrudnik/yealink-click2dial-handler/pkg/yealink"
 	"github.com/kirsle/configdir"
 	"io/ioutil"
 	"os"

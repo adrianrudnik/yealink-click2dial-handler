@@ -1,7 +1,7 @@
 package main
 
 import (
-	"github.com/adrianrudnik/yealink-url-scheme-handler/service/cmd"
+	"github.com/adrianrudnik/yealink-click2dial-handler/cmd"
 	"github.com/rs/zerolog"
 	"github.com/rs/zerolog/log"
 	"os"
