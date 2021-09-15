@@ -16,6 +16,11 @@ builds:
     goarm:
       - 6
       - 7
+archives:
+  -
+    builds:
+      - default
+    id: yealink-click2dial
     format_overrides:
       - goos: windows
         format: zip
