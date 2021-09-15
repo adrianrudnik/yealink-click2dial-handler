@@ -78,6 +78,16 @@ xdg-open tel:+4930123
 
 It should simply dial. If it fails, but the test within the setup-chapter worked, there is a typo/error in the association done in this chapter.
 
+## Remarks / FAQ
+
+### Is there windows support?
+
+I guess it should be _easy_ to do this with some small time and effort to register the URL handler for this, but I did not yet find the time to map `yealink-click2dial dial [number]` to it, maybe you have some time and can add the docs for it? 
+
+### Is the code super-clean?
+
+Nope, this project expands a bit on the phone API like DND feature toggling that is not used. Why? Did it for something else, did not have the time to migrate it to a shared lib.
+
 ## Thanks to / related
 
 https://wiki.lug-wr.de/wiki/doku.php?id=user:tstoeber:howto:href-tel-handler:start
