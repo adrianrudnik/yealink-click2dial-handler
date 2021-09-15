@@ -2,7 +2,14 @@
 
 A simple application to help register a system native click2dial url scheme handler like "tel:" and "callto:" for Yealink desktop phones.
 
-### Setup
+- [Setup](#setup)
+- [Installation](#installation)
+  - [Linux desktop](#linux-desktop)
+  - [Windows desktop](#windows-desktop)
+- [Remarks / FAQ](#remarks--faq)
+- [Thanks to / related](#thanks-to--related)
+
+## Setup
 
 These instructions are not specific to any OS. For proper OS installation instructions, follow the [installation](#installation)-steps below.
 
@@ -78,11 +85,27 @@ xdg-open tel:+4930123
 
 It should simply dial. If it fails, but the test within the setup-chapter worked, there is a typo/error in the association done in this chapter.
 
+### Windows desktop
+
+This has been tested on Windows 10. If you use any other version or require different steps feel free to document and do a PR.
+
+First install the windows binary into your reachable %PATH% for executables on Windows (for simplicity, I've put it into `C:\Windows`).
+
+Ensure you followed the [setup](#setup) instructions and have a working configuration (and append `.exe` to your calls).
+
+Install the default application listener [windows.reg](windows.reg) into the Windows registry and reboot windows.
+
+Now test the integration on a command line prompt:
+
+```
+start "" "tel:+4930123"
+```
+
+Windows should prompt you with options of available applications, one of them "yealink-click2dial", which you select.
+
+From now on, every "tel:" click in any kind of app or browser should trigger a dial flow on your phone.
+
 ## Remarks / FAQ
-
-### Is there windows support?
-
-The binary works on windows and I guess it should be _easy_ to do this with some minimal effort to register the URL handler for this, but I did not yet find the time to map `yealink-click2dial dial [number]` to it, maybe you have some time and can add the docs for it? 
 
 ### Is the code super-clean?
 
@@ -91,4 +114,5 @@ Nope, this project expands a bit on the phone API like DND feature toggling that
 ## Thanks to / related
 
 https://wiki.lug-wr.de/wiki/doku.php?id=user:tstoeber:howto:href-tel-handler:start
+https://superuser.com/questions/1112229/cant-change-tel-protocol-handler-in-windows-10
 
