@@ -2,12 +2,14 @@
 builds:
   # You can have multiple builds defined as a yaml list
   -
+    id: yealink-click2dial
     binary: yealink-click2dial
     goos:
       - linux
       - windows
       - darwin
     goarch:
+      - 386
       - amd64
       - arm
       - arm64
