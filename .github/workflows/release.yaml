@@ -1,15 +1,23 @@
-on: push
-name: Build Release
+on: [push, pull_request]
+name: Test
 jobs:
-  release-linux-386:
-    name: release linux/386
-    runs-on: ubuntu-latest
+  test:
+    strategy:
+      matrix:
+        go-version: [1.17.x]
+        os: [ubuntu-latest, macos-latest, windows-latest]
+    runs-on: ${{ matrix.os }}
     steps:
-    - uses: actions/checkout@master
-    - name: compile and release
-      uses: ngs/go-release.action@v1.0.1
-      env:
-        CMD_PATH: -o yealink-click2dial
-        GOARCH: "386"
-        GOOS: linux
-        EXTRA_FILES: "LICENSE"
+      - name: Install Go
+        uses: actions/setup-go@v2
+        with:
+          go-version: ${{ matrix.go-version }}
+      - name: Checkout code
+        uses: actions/checkout@v2
+      - name: Test
+        run: go test ./...
+      - name: Run GoReleaser
+        uses: goreleaser/goreleaser-action@master
+        with:
+          version: latest
+          args: release --rm-dist
