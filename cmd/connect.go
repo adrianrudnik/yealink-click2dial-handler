@@ -7,12 +7,10 @@ import (
 	"github.com/adrianrudnik/yealink-click2dial-handler/pkg/yealink"
 	"github.com/rs/zerolog/log"
 	"github.com/spf13/cobra"
-	"golang.org/x/term"
 	"net"
 	"os"
 	"strconv"
 	"strings"
-	"syscall"
 	"time"
 )
 
@@ -129,14 +127,14 @@ var connectCmd = &cobra.Command{
 }
 
 func askPassword() (string, error) {
+	reader := bufio.NewReader(os.Stdin)
 	fmt.Print("Please enter the password:")
-	password, err := term.ReadPassword(syscall.Stdin)
+	fmt.Println("")
 
-	if err != nil {
-		return "", err
-	}
+	password, _ := reader.ReadString('\n')
+	password = strings.Replace(password, "\n", "", -1)
 
-	return string(password), nil
+	return password, nil
 }
 
 func askAccount(accounts []yealink.Account) yealink.Account {
@@ -151,7 +149,6 @@ func askAccount(accounts []yealink.Account) yealink.Account {
 	for {
 		fmt.Print("> ")
 		text, _ := reader.ReadString('\n')
-		// convert CRLF to LF
 		text = strings.Replace(text, "\n", "", -1)
 
 		// Validate input
