@@ -67,6 +67,7 @@ var connectCmd = &cobra.Command{
 
 		// Trigger the first account read, lets see if we can pass through
 		log.Info().Msg("Triggering config read, please watch the phone and confirm a possible access request screen, confirm it, then restart this command")
+		log.Info().Str("pass", password).Str("user", username).Msg("Tralala")
 
 		accounts, err := yealink.ReadAccounts(&device)
 
@@ -127,17 +128,21 @@ var connectCmd = &cobra.Command{
 }
 
 func askPassword() (string, error) {
+	time.Sleep(250 * time.Millisecond)
+
 	reader := bufio.NewReader(os.Stdin)
 	fmt.Print("Please enter the password:")
 	fmt.Println("")
 
 	password, _ := reader.ReadString('\n')
-	password = strings.Replace(password, "\n", "", -1)
+	password = strings.Trim(password, "\r\n")
 
 	return password, nil
 }
 
 func askAccount(accounts []yealink.Account) yealink.Account {
+	time.Sleep(250 * time.Millisecond)
+
 	reader := bufio.NewReader(os.Stdin)
 	fmt.Println("Please pick the default outgoing URI:")
 	fmt.Println("")
@@ -149,13 +154,13 @@ func askAccount(accounts []yealink.Account) yealink.Account {
 	for {
 		fmt.Print("> ")
 		text, _ := reader.ReadString('\n')
-		text = strings.Replace(text, "\n", "", -1)
+		text = strings.Trim(text, "\r\n")
 
 		// Validate input
 		in, err := strconv.Atoi(text)
 		if err != nil || in < 0 || in > len(accounts)-1 {
 			log.Error().Msgf("Invalid input, please choose a value between 0 and %d", len(accounts)-1)
-			time.Sleep(100 * time.Millisecond)
+			time.Sleep(250 * time.Millisecond)
 		} else {
 			return accounts[in]
 		}
