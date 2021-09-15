@@ -1,0 +1,31 @@
+Windows Registry Editor Version 5.00
+
+[HKEY_CURRENT_USER\SOFTWARE\Classes\callto]
+@="URL:callto"
+"URL Protocol"=""
+
+[HKEY_CURRENT_USER\SOFTWARE\Classes\tel]
+@="URL:tel"
+"URL Protocol"=""
+
+[HKEY_CURRENT_USER\SOFTWARE\Classes\yealink-click2dial.callto]
+
+[HKEY_CURRENT_USER\SOFTWARE\Classes\yealink-click2dial.callto\Shell]
+
+[HKEY_CURRENT_USER\SOFTWARE\Classes\yealink-click2dial.callto\Shell\Open]
+
+[HKEY_CURRENT_USER\SOFTWARE\Classes\yealink-click2dial.callto\Shell\Open\Command]
+@="yealink-click2dial dial %1"
+
+[HKEY_CURRENT_USER\SOFTWARE\yealink-click2dial]
+
+[HKEY_CURRENT_USER\SOFTWARE\yealink-click2dial\Capabilities]
+"ApplicationDescription"="yealink-click2dial"
+"ApplicationName"="yealink-click2dial"
+
+[HKEY_CURRENT_USER\SOFTWARE\yealink-click2dial\Capabilities\URLAssociations]
+"callto"="yealink-click2dial.callto"
+"tel"="yealink-click2dial.callto"
+
+[HKEY_CURRENT_USER\SOFTWARE\RegisteredApplications]
+"yealink-click2dial"="Software\\yealink-click2dial\\Capabilities"
