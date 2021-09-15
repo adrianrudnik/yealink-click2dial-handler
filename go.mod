@@ -1,4 +1,4 @@
-module github.com/adrianrudnik/yealink-url-scheme-handler/service
+module github.com/adrianrudnik/yealink-click2dial-handler
 
 go 1.17
 
