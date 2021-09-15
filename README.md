@@ -82,7 +82,7 @@ It should simply dial. If it fails, but the test within the setup-chapter worked
 
 ### Is there windows support?
 
-I guess it should be _easy_ to do this with some small time and effort to register the URL handler for this, but I did not yet find the time to map `yealink-click2dial dial [number]` to it, maybe you have some time and can add the docs for it? 
+The binary works on windows and I guess it should be _easy_ to do this with some minimal effort to register the URL handler for this, but I did not yet find the time to map `yealink-click2dial dial [number]` to it, maybe you have some time and can add the docs for it? 
 
 ### Is the code super-clean?
 
