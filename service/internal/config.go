@@ -10,7 +10,7 @@ import (
 )
 
 func GetConfigFilePath() (string, error) {
-	p := configdir.LocalConfig("yealink-url-scheme-handler")
+	p := configdir.LocalConfig("yealink-click2dial-handler")
 
 	// Ensure the config path exists
 
