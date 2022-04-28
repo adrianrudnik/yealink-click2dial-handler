@@ -11,6 +11,7 @@ import (
 func main() {
 	log.Logger = log.Output(zerolog.ConsoleWriter{
 		TimeFormat: time.RFC3339,
+		NoColor: true,
 		Out: os.Stderr,
 	})
 
