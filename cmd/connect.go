@@ -67,7 +67,6 @@ var connectCmd = &cobra.Command{
 
 		// Trigger the first account read, lets see if we can pass through
 		log.Info().Msg("Triggering config read, please watch the phone and confirm a possible access request screen, confirm it, then restart this command")
-		log.Info().Str("pass", password).Str("user", username).Msg("Tralala")
 
 		accounts, err := yealink.ReadAccounts(&device)
 
